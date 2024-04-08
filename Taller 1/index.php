@@ -1,9 +1,9 @@
 <?php
 
 try{
-    $mbd = new PDO('mysql:host=localhost;dbname=taller', "root", "admin");
+    $mbd = new PDO('mysql:host=localhost;dbname=taller', "root", "");
 
-    $sql = "SELECT * FROM usuarios";
+    $sql = "SELECT * FROM taller";
 
 
     $res = $mbd->query($sql);
@@ -19,3 +19,4 @@ try{
 } catch(PDOException $e) {
     print('error mi dev'. $e->getMessage());
     die();
+}
