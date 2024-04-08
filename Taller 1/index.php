@@ -1,9 +1,9 @@
 <?php
 
 try{
-    $mbd = new PDO('mysql:host=localhost;dbname=taller', "root", "");
+    $mbd = new PDO('mysql:host=localhost;dbname=taller1_desarroii', "root", "");
 
-    $sql = "SELECT * FROM taller";
+    $sql = "SELECT * FROM autores";
 
 
     $res = $mbd->query($sql);
