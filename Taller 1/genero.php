@@ -1,32 +1,5 @@
 <?php
-
-// Recibir parámetros
-$id = $_GET['ID_autor'];
-
-// Seleccionar datos
-$sql = "SELECT * FROM autores WHERE id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id);
-$stmt->execute();
-
-// Obtener resultado
-$result = $stmt->get_result();
-$usuario = $result->fetch_assoc();
-
-// Devolver respuesta
-if ($usuario) {
-  echo json_encode($usuario);
-} else {
-  echo json_encode(array("error" => "Autor no encontrado"));
-}
-
-$stmt->close();
-$conn->close();
-
-?>
-
-<?php
-/// PUNTO 3
+///PUNTO 3
 try{
     $mbd = new PDO('mysql:host=localhost;dbname=taller1_desarroii', "root", "");
 

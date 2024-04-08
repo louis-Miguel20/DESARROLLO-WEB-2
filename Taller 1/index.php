@@ -3,7 +3,12 @@
 try{
     $mbd = new PDO('mysql:host=localhost;dbname=taller1_desarroii', "root", "");
 
+    $id;
+
     $sql = "SELECT * FROM autores";
+    $sql = "SELECT * FROM editoriales";
+    $sql = "SELECT * FROM generos";
+    $sql = "SELECT * FROM libros";
 
 
     $res = $mbd->query($sql);

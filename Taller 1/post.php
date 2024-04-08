@@ -1,20 +1,24 @@
 <?php
-
 // Recibir datos
-$nombre = $_POST['Nombre'];
-$correo = $_POST['ID_autor'];
+$nombre = $_POST['nombre'];
+$nacionalidad = $_POST['nacionalidad'];
 
 // Insertar datos
-$sql = "INSERT INTO usuarios (Nombre, ID_autor) VALUES (?, ?)";
+$sql = "INSERT INTO usuarios (nombre, nacionalidad) VALUES (?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $nombre, $correo);
+$stmt->bind_param("ss", $nombre, $nacionalidad);
 $stmt->execute();
 
 // Devolver respuesta
 if ($stmt->affected_rows > 0) {
-  echo "Usuario creado correctamente";
+  $autor = array(
+    "id" => $stmt->insert_id,
+    "nombre" => $nombre,
+    "nacionalidad" => $correo
+  );
+  echo json_encode($autor);
 } else {
-  echo "Error al crear usuario";
+  echo json_encode(array("error" => "Error al crear autor"));
 }
 
 $stmt->close();
