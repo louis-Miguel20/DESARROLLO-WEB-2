@@ -1,17 +1,21 @@
 <?php
 
+header('Content-Type: application/json');
+
 // Recibir parámetros
+$conn = new PDO('mysql:host=localhost;dbname=taller1_desarroii', "root", "");
+
 $id = $_GET['ID_autor'];
 
+$id_numeri = intval($id);
+
 // Seleccionar datos
-$sql = "SELECT * FROM autores WHERE id = ?";
+$sql = "SELECT * FROM autores WHERE id_autor = :id";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id);
+$stmt->bindParam(':id', $id_numeri );
 $stmt->execute();
 
-// Obtener resultado
-$result = $stmt->get_result();
-$usuario = $result->fetch_assoc();
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Devolver respuesta
 if ($usuario) {
@@ -20,13 +24,13 @@ if ($usuario) {
   echo json_encode(array("error" => "Autor no encontrado"));
 }
 
-$stmt->close();
-$conn->close();
 
 ?>
 
 <?php
 /// PUNTO 3
+
+/*
 try{
     $mbd = new PDO('mysql:host=localhost;dbname=taller1_desarroii', "root", "");
 
@@ -60,4 +64,4 @@ WHERE
 } catch(PDOException $e) {
     print('error mi dev'. $e->getMessage());
     die();
-}
+}*/

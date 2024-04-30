@@ -1,4 +1,7 @@
 <?php
+
+
+
 ///PUNTO 3
 try{
     $mbd = new PDO('mysql:host=localhost;dbname=taller1_desarroii', "root", "");
@@ -23,7 +26,7 @@ WHERE
     $res = $mbd->query($sql);
 
     $respuesta = [];
-    foreach ($res as $fila) {
+    while ($fila = $res->fetch(PDO::FETCH_ASSOC)) {
         $respuesta[] = $fila;
     }
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Actas</title>
+    
+
+    <link rel="stylesheet" href="../assets/css/estilos.css">
+
+</head>
+<body class="admin">
+
+    <h1>Administrar Actas</h1>
+
+    <h2>Crear Acta</h2>
+    <form action="crear_acta.php" method="POST">
+        <label for="fecha">FECHA:</label>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+        <label for="hora_ini">HORA DE INICIO:</label>
+        <input type="time" id="hora_ini" name="hora_inicio" required>
+        <label for="hora_fin">HORA DE FIN:</label>
+        <input type="time" id="hora_finalizacion" name="hora_finalizacion" required><br><BR>
+        <label for="hora_fin">TEMA:</label>
+        <input type="text" id="tema" name="tema" required><br><BR>
+        <label for="lugar">LUGAR</label>
+        <input type="text" id="lugar" name="lugar" required><BR><BR>
+            <label for="contenido">CONTENIDO:</label><br>
+            <textarea id="contenido" name="contenido" rows="5" cols="50" required></textarea><br>
+            <label>Tipo de Acta:</label>
+            <input type="radio" id="publica" name="tipo" value="Publica" required>
+            <label for="publica">Publica</label>
+            
+            <input type="radio" id="privada" name="tipo" value="Privada" required>
+            <label for="privada">Privada</label><br><br>
+        <button type="submit">Crear Acta</button>
+    </form>
+
+    <!-- Agrega más formularios según sea necesario para otras operaciones -->
+
+</body>
+</html>
