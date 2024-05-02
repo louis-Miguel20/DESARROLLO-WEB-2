@@ -19,9 +19,9 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Devolver respuesta
 if ($usuario) {
-  echo json_encode($usuario);
+echo json_encode($usuario);
 } else {
-  echo json_encode(array("error" => "Autor no encontrado"));
+echo json_encode(array("error" => "Autor no encontrado"));
 }
 
 
