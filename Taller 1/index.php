@@ -1,6 +1,6 @@
 <?php
 
-try{
+try {
     $mbd = new PDO('mysql:host=localhost;dbname=taller', "root", "admin");
 
     $sql = "SELECT * FROM usuarios";
@@ -16,6 +16,7 @@ try{
     header('content-type:application/json;charset=utf-8');
     echo json_encode($respuesta);
     $mbd = null;
-} catch(PDOException $e) {
-    print('error mi dev'. $e->getMessage());
+} catch (PDOException $e) {
+    print('error mi dev' . $e->getMessage());
     die();
+}
