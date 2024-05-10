@@ -1,0 +1,79 @@
+<!DOCTYPEhtml>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/actas-removebg-preview.png">
+    <title>Administrar Actas</title>
+    
+
+    <link rel="stylesheet" href="../login/assets/css/estilos.css">
+
+
+</head>
+<div class="contenedor_logo">
+    <div class="row">
+        <div class="col-12">
+            <nav class="main-nav">
+                <a href="./../../../DESARROLLO-WEB-2/index.php" class="logo">
+                    <img
+                      src="../../pagina principal/assets/images/actas-removebg-preview.png"
+                      alt="tus actas"
+                    />
+                  </a>
+            </nav>
+            
+        </div>
+    </div>
+</div>
+
+<div class="header">
+    
+    <div class="titulo">
+        
+        
+            <h1>Administrar Actas</h1>
+    </div>
+</div>
+
+<body class="admin">
+   
+
+
+
+    <div class="crear">
+        <h2>Crear Acta</h2>
+    </div>
+    <form action="crear_acta.php" method="POST">
+        <div class="cont_admin">
+            <label for="fecha">FECHA:</label>
+            <input type="date" id="fecha" name="fecha" required><br><br>
+            <label for="hora_ini">HORA DE INICIO:</label>
+            <input type="time" id="hora_ini" name="hora_inicio" required>
+            <label for="hora_fin">HORA DE FIN:</label>
+            <input type="time" id="hora_finalizacion" name="hora_finalizacion" required><br><BR>
+            <label for="hora_fin">TEMA:</label>
+            <input type="text" id="tema" name="tema" required><br><BR>
+            <label for="lugar">LUGAR</label>
+            <input type="text" id="lugar" name="lugar" required><BR><BR>
+            <label for="contenido">CONTENIDO:</label><br>
+            <textarea id="contenido" name="contenido" rows="5" cols="50" required></textarea><br>
+            <label>Tipo de Acta:</label>
+            <input type="radio" id="publica" name="tipo" value="Publica" required>
+            <label for="publica">Publica</label>    
+            <input type="radio" id="privada" name="tipo" value="Privada" required>
+            <label for="privada">Privada</label><br><br>
+
+            <div class="crear button">
+                <button type="submit">GUARDAR</button>
+            </div>
+
+        </div>
+
+        
+    </form>
+
+    <!-- Agrega más formularios según sea necesario para otras operaciones -->
+
+</body>
+</html>
