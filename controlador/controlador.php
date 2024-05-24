@@ -1,72 +1,33 @@
 <?php
-include '../modelo/conexion.php'; // Incluimos el archivo de la clase de conexión
+require_once '../modelo/conexion.php';
+require_once 'ReunionControlador.php';
 
-session_start();
+// Crear instancia de la conexión
+$conexion = new Conexion();
+// Crear instancia del controlador
+$controlador = new ReunionControlador($conexion->getConexion());
 
-// Manejo del inicio de sesión
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['usuario']) && isset($_POST['correo'])) {
-    $usuario_login = $_POST['usuario'];
-    $correo_login = $_POST['correo'];
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
+    // Procesar el formulario de agregar reunión
+    $fecha = $_POST["fecha"];
+    $hora_inicio = $_POST["hora_inicio"];
+    $hora_finalizacion = $_POST["hora_finalizacion"];
+    $lugar = $_POST["lugar"];
+    $estado = $_POST["estado"];
 
-    if (!empty($usuario_login) && !empty($correo_login)) {
-        // Creamos una instancia de la clase Conexion
-        $conexion = new Conexion();
-        $con = $conexion->getConexion();
-
-        // Realizamos la consulta
-        $query = "SELECT * FROM usuario WHERE usuario='$usuario_login' AND correo='$correo_login'";
-        $resultado = mysqli_query($con, $query);
-
-        // Verificamos si se encontró un usuario con esos datos
-        if (mysqli_num_rows($resultado) == 1) {
-            $_SESSION['usuario'] = $usuario_login;
-            header('Location: ./../vista/admin/index_admin.html');
-            exit();
-        } else {
-            echo '<script>alert("Usuario o correo incorrectos"); window.location= "./../../DESARROLLO-WEB-2/vista/login/index.html";</script>';
-        }
-         } else {
-          echo "Datos de inicio de sesión no proporcionados";
-         }
-}
-
-// Verificar si el formulario de registro se ha enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre']) && isset($_POST['correo']) && isset($_POST['usuario'])) {
-    $nombre = $_POST['nombre'];
-    $correo = $_POST['correo'];
-    $usuario = $_POST['usuario'];
-
-    if (!empty($nombre) && !empty($correo) && !empty($usuario)) {
-        // Creamos una instancia de la clase Conexion
-        $conexion = new Conexion();
-        $con = $conexion->getConexion();
-
-        // Verificar si el correo ya está registrado
-        $ver_correo = mysqli_query($con, "SELECT * FROM usuario WHERE correo ='$correo'");
-        if (mysqli_num_rows($ver_correo) > 0) {
-            echo '<script>alert("Este correo ya está registrado, intenta con otro"); window.location= "./../../DESARROLLO-WEB-2/index.php";</script>';
-            exit();
-        }
-
-        // Verificar si el usuario ya está registrado
-        $ver_usuario = mysqli_query($con, "SELECT * FROM usuario WHERE usuario ='$usuario'");
-        if (mysqli_num_rows($ver_usuario) > 0) {
-            echo '<script>alert("Este usuario ya está registrado, intenta con otro"); window.location= "./../../DESARROLLO-WEB-2/index.php";</script>';
-            exit();
-        }
-
-        // Insertar el nuevo usuario en la base de datos
-        $query = "INSERT INTO usuario(nombre, correo, usuario) VALUES('$nombre', '$correo', '$usuario')";
-        $ejec = mysqli_query($con, $query);
-
-        // Verificar si se pudo insertar el usuario
-        if ($ejec) {
-            echo '<script>alert("Usuario registrado con éxito"); window.location= "./../../DESARROLLO-WEB-2/index.php";</script>';
-            exit();
-        } else {
-            echo "Error al registrar el usuario: " . mysqli_error($con);
-        }
+    // Agregar la reunión usando el controlador
+    if ($controlador->agregarReunion($fecha, $hora_inicio, $hora_finalizacion, $lugar, $estado)) {
+        // Mensaje de éxito
+        echo '<script>alert("La reunión fue agregada correctamente.");</script>';
+       
+        echo '<script>window.location.href = "../vista/Reunion.html";</script>';
     } else {
-        echo "Datos de registro incompletos";
+        // Mensaje de error
+        echo '<script>alert("Hubo un error al agregar la reunión.");</script>';
+        
+        echo '<script>window.location.href = "../vista/Reunion.html";</script>';
     }
+} else {
+    // Manejar el caso en el que no se envíe una solicitud POST
+    echo "Por favor, envía el formulario correctamente.";
 }
