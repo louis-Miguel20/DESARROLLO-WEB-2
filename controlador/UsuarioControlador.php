@@ -4,7 +4,7 @@ require_once '../modelo/UsuarioModelo.php';
 
 class UsuarioControlador {
     private $modelo;
-
+    
     public function __construct() {
         $conexion = new Conexion();
         $this->modelo = new UsuarioModelo($conexion->getConexion());
