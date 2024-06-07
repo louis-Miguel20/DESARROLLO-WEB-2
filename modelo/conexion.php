@@ -1,25 +1,13 @@
 <?php
 
-require '../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable('./../');
-
-$dotenv->load();
-
 class Conexion {
-    private $host;
-    private $usuario;
-    private $password;
-    private $db;
+    private $host = "localhost";
+    private $usuario = "root";
+    private $password = "";
+    private $db = "dw_2";
     private $conexion;
 
     public function __construct() {
-
-        $this->host = $_ENV['HOST'];
-        $this->usuario = $_ENV['USER'];
-        $this->password = $_ENV['PASSWORD'];
-        $this->db = $_ENV['DATABASE'];
-
         $this->conexion = new mysqli($this->host, $this->usuario, $this->password, $this->db);
 
         if ($this->conexion->connect_error) {
