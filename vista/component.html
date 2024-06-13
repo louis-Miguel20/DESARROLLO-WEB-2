@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tus Actas</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="grid grid-cols-[280px_1fr] min-h-screen w-full">
+        <div class="sidebar">
+            <div class="sticky top-0 p-2">
+                <a class="flex items-center gap-2" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                    </svg>
+                    <span class="font-bold text-lg">Actas</span>
+                </a>
+            </div>
+            <div class="overflow-auto flex-1">
+                <nav class="grid gap-2 p-4">
+                    <a href="pagina principal/index.html" class="nav-item">Ver Actas</a>
+                    <a href="#" class="nav-item">Crear Acta</a>
+                    <a href="#" class="nav-item">Editar Acta</a>
+                    <a href="#" class="nav-item">Archivar Acta</a>
+                </nav>
+            </div>
+        </div>
+        <div class="main-content">
+            <header class="header">
+                <div class="flex items-center gap-4">
+                    <a class="flex items-center gap-2" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                            <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                        </svg>
+                        <span class="font-bold text-lg">Actas</span>
+                    </a>
+                </div>
+                <button class="menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                        <line x1="4" x2="20" y1="12" y2="12"></line>
+                        <line x1="4" x2="20" y1="6" y2="6"></line>
+                        <line x1="4" x2="20" y1="18" y2="18"></line>
+                    </svg>
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+            </header>
+            <main class="main">
+                <div class="content">
+                    <div class="mb-6">
+                        <h1 class="title">Actas</h1>
+                        <p class="subtitle">Aquí puedes ver, crear, editar y archivar actas.</p>
+                    </div>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Título</th>
+                                    <th>Estado</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024-05-15</td>
+                                    <td>Reunión Trimestral</td>
+                                    <td><span class="badge success">Aprobada</span></td>
+                                    <td><a href="#" class="link">Ver Detalles</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2024-04-20</td>
+                                    <td>Planificación Anual</td>
+                                    <td><span class="badge warning">Pendiente</span></td>
+                                    <td><a href="#" class="link">Ver Detalles</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2024-03-10</td>
+                                    <td>Revisión de Objetivos</td>
+                                    <td><span class="badge danger">Archivada</span></td>
+                                    <td><a href="#" class="link">Ver Detalles</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <p>&copy; derechos reservados para LUIS, EIDER, DANA, MAROLYN</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
