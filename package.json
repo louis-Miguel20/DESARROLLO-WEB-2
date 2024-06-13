@@ -1,0 +1,15 @@
+{
+  "name": "desarrollo-web-2",
+  "version": "1.0.0",
+  "description": "Trabajos desarrollados por: Eider Angulo -  Dana Gonzalez -  Luis Rambao (Estudiante de los Miercoles) -  Marolyn Salazar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}
