@@ -1,11 +1,10 @@
-/* body {
-    font-family: var(--font-inter), sans-serif;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-inter), sans-serif;
-  }*/
-
+.admin{
+  background-image: url(../images/bg2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
   body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -20,13 +19,62 @@
     width: 100%;
 }
 
+.menu-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
 .sidebar {
-    background-color: #87CEEB;
+    background-color: #87CEEB; /* #03045e */
     color: white;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
+
+.sidebar-header {
+    position:relative;
+    top: 0;
+    padding: 1rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.sidebar-content {
+    overflow: auto;
+    flex: 1;
+}
+
+.nav {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #6eb8e9;
+}
+
 
 .sticky {
     position: sticky;
@@ -72,10 +120,17 @@
 }
 
 .nav-item {
-    display: block;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+
 }
 
 .nav-item:hover {
@@ -88,7 +143,7 @@
 }
 
 .header {
-    background-color: #87CEEB;
+    background-color: #b7e1f1;
     color: white;
     padding: 1rem 1.5rem;
     display: flex;
@@ -101,8 +156,13 @@
 }
 
 .main {
-    flex: 1;
-    padding: 2rem 1rem;
+  flex: 1;
+  padding: 2rem 1rem;
+  background-image: url(/login/assets/images/bg2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .content {
@@ -117,10 +177,11 @@
 .title {
     font-size: 1.875rem;
     font-weight: bold;
+    image-rendering: url(/login/assets/images/actas-removebg-preview.png);
 }
 
 .subtitle {
-    color: #87CEEB;
+    color: #0d0f0f;
 }
 
 .table-container {
@@ -183,8 +244,124 @@
 }
 
 .footer {
-    background-color: #87CEEB;
+    background-color: #9acfe2;
     color: white;
     padding: 1rem 1.5rem;
     text-align: center;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter), sans-serif;
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.main-contents {
+    flex: 1;
+    padding: 2rem 2rem;
+    background-image: url(/login/assets/images/bg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+ }
+
+.form-containers {
+    margin-bottom: 1.5rem;
+}
+
+.form-titles {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitles {
+    color: #080808;
+    margin-bottom: 1.5rem;
+}
+
+.form-boxs {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-field label {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+}
+
+.form-field textarea {
+    min-height: 80px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn-outline,
+.btn-primary {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #ddd;
+}
+
+.btn-outline:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-primary {
+    background-color: #87CEEB;
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #6aa8d1;
 }

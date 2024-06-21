@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Tus Actas</title>
+    <link rel="icon" href="./login/assets/images/actas-removebg-preview.png">
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class="grid grid-cols-[280px_1fr] min-h-screen w-full">
         <div class="sidebar">
-            <div class="sticky top-0 p-2">
-                <a class="flex items-center gap-2" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                    </svg>
-                    <span class="font-bold text-lg">Actas</span>
+            <div class="sidebar-header">
+                <a href="#" class="sidebar-link">
+                    <img src="/login/assets/images/actas-removebg-preview.png" alt=""class="icon" xmlns="/vista/login/assets/images/actas-removebg-preview.png" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></>
+                    <span>Tus Actas</span>
                 </a>
             </div>
-            <div class="overflow-auto flex-1">
-                <nav class="grid gap-2 p-4">
-                    <a href="pagina principal/index.html" class="nav-item">Ver Actas</a>
-                    <a href="#" class="nav-item">Crear Acta</a>
-                    <a href="#" class="nav-item">Editar Acta</a>
-                    <a href="#" class="nav-item">Archivar Acta</a>
+            <div class="sidebar-content">
+                <nav class="nav">
+                    <a href="./crear.html" class="nav-link">Crear Acta</a>
+                    <a href="./ver.html" class="nav-link">Ver Actas</a>
+                    <a href="#" class="nav-link">Editar Acta</a>
+                    <a href="#" class="nav-link">Archivar Acta</a>
                 </nav>
             </div>
         </div>
+
         <div class="main-content">
             <header class="header">
                 <div class="flex items-center gap-4">
                     <a class="flex items-center gap-2" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                            <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                        </svg>
+                        <img src="/login/assets/images/R.png" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                        </>
                         <span class="font-bold text-lg">Actas</span>
                     </a>
                 </div>
+                <nav>
+                    <a href="./Reunion.html">Salir </a>
+                </nav>
                 <button class="menu-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
                         <line x1="4" x2="20" y1="12" y2="12"></line>
@@ -50,7 +50,7 @@
             <main class="main">
                 <div class="content">
                     <div class="mb-6">
-                        <h1 class="title">Actas</h1>
+                        <h1 class="title" rel="icon">Actas</h1>
                         <p class="subtitle">Aquí puedes ver, crear, editar y archivar actas.</p>
                     </div>
                     <div class="table-container">

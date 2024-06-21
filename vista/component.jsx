@@ -1,12 +1,14 @@
 /**
  * v0 by Vercel.
- * @see https://v0.dev/t/eKamXfmDA0x
+ * @see https://v0.dev/t/bIpbi5DsdCF
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Select } from "@/components/ui/select"
+import { Textarea } from "@/components/ui/textarea"
 
 export default function Component() {
   return (
@@ -51,58 +53,48 @@ export default function Component() {
         <main className="flex-1 py-8 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="mb-6">
-              <h1 className="text-3xl font-bold">Actas</h1>
-              <p className="text-[#87CEEB]">Aquí puedes ver, crear, editar y archivar actas.</p>
+              <h1 className="text-3xl font-bold">Crear Acta</h1>
+              <p className="text-[#87CEEB]">Llena los siguientes campos para crear una nueva acta.</p>
             </div>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Fecha</TableHead>
-                    <TableHead>Título</TableHead>
-                    <TableHead>Estado</TableHead>
-                    <TableHead />
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell>2023-05-15</TableCell>
-                    <TableCell>Reunión Trimestral</TableCell>
-                    <TableCell>
-                      <Badge variant="success">Aprobada</Badge>
-                    </TableCell>
-                    <TableCell>
-                      <Link href="#" className="text-[#87CEEB] hover:underline" prefetch={false}>
-                        Ver Detalles
-                      </Link>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>2023-04-20</TableCell>
-                    <TableCell>Planificación Anual</TableCell>
-                    <TableCell>
-                      <Badge variant="warning">Pendiente</Badge>
-                    </TableCell>
-                    <TableCell>
-                      <Link href="#" className="text-[#87CEEB] hover:underline" prefetch={false}>
-                        Ver Detalles
-                      </Link>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>2023-03-10</TableCell>
-                    <TableCell>Revisión de Objetivos</TableCell>
-                    <TableCell>
-                      <Badge variant="danger">Archivada</Badge>
-                    </TableCell>
-                    <TableCell>
-                      <Link href="#" className="text-[#87CEEB] hover:underline" prefetch={false}>
-                        Ver Detalles
-                      </Link>
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+            <div className="bg-white shadow-md rounded-lg overflow-hidden p-6">
+              <form className="grid gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="titulo">Título de la Reunión</Label>
+                  <Input type="text" id="titulo" />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="fecha">Fecha</Label>
+                    <Input type="date" id="fecha" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="hora-inicio">Hora de Inicio</Label>
+                    <Input type="time" id="hora-inicio" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="hora-fin">Hora de Finalización</Label>
+                    <Input type="time" id="hora-fin" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="estado">Estado</Label>
+                    <Select id="estado">
+                      <option value="pendiente">Pendiente</option>
+                      <option value="aprobada">Aprobada</option>
+                      <option value="archivada">Archivada</option>
+                    </Select>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="descripcion">Descripción</Label>
+                  <Textarea id="descripcion" rows={4} />
+                </div>
+                <div className="flex justify-end gap-2">
+                  <Button variant="outline">Cancelar</Button>
+                  <Button>Guardar</Button>
+                </div>
+              </form>
             </div>
           </div>
         </main>
